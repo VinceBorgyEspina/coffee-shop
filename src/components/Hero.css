@@ -1,0 +1,73 @@
+.hero-section {
+  position: relative;
+  height: 100vh;
+  min-height: 800px;
+  display: flex;
+  align-items: center;
+  overflow: hidden;
+}
+
+.hero-background {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-size: cover;
+  background-position: center;
+  z-index: -2;
+  transform: scale(1.05);
+  animation: slowZoom 20s ease-in-out infinite alternate;
+}
+
+@keyframes slowZoom {
+  from { transform: scale(1); }
+  to { transform: scale(1.05); }
+}
+
+.hero-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(135deg, var(--color-bg-dark) 0%, rgba(10, 7, 5, 0.4) 50%, var(--color-bg-dark) 100%);
+  z-index: -1;
+}
+
+.hero-content {
+  display: flex;
+  justify-content: flex-start;
+  padding-top: 4rem;
+}
+
+.hero-card {
+  max-width: 650px;
+  padding: 4rem;
+  border-radius: 32px;
+}
+
+.hero-text {
+  font-size: 1.25rem;
+  margin: 1.5rem 0 2.5rem;
+  color: var(--color-text-muted);
+  font-weight: 300;
+  line-height: 1.8;
+}
+
+.hero-buttons {
+  display: flex;
+  gap: 1.5rem;
+}
+
+@media (max-width: 768px) {
+  .hero-card {
+    padding: 2.5rem;
+  }
+  .hero-buttons {
+    flex-direction: column;
+  }
+  .hero-buttons .btn {
+    width: 100%;
+  }
+}
